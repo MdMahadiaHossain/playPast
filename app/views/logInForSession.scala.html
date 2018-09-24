@@ -1,0 +1,18 @@
+@(form: Form[services.formServices.LogInForm.Data])(postUrl: Call)(implicit request: MessagesRequestHeader)
+
+<p> Log in to create session</p>
+
+
+
+    @helper.form(postUrl) {
+        @helper.CSRF.formField
+
+        @helper.inputText(form("userId"))
+
+        @helper.inputText(form("userName"))
+        @helper.inputPassword(form("password"))
+
+        <button>Log In</button>
+    }
+
+   

@@ -1,0 +1,12 @@
+@(testForm:Form[services.formServices.TestForm.Data])(text:String)(postUrl: Call)(implicit messageRequest: MessagesRequestHeader)
+
+@helper.form(routes.TestFormController.getDataforTestForm){
+    @helper.CSRF.formField
+    @helper.inputText(testForm.apply("text"))
+
+    <button>submit</button>
+}
+
+
+
+<p>@Html(text)</p>
